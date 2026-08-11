@@ -1,23 +1,14 @@
 /* ==========================================================================
    PandaWare — custom styling
-   The branded monospace/lowercase look is applied to site-wide *chrome*
-   (header, tabs, sidebar nav) so every page feels like the same product —
-   but doc *body* text (paragraphs, headings inside articles) stays in
-   Material's normal readable font, since that's long-form technical content.
-   The homepage additionally gets the full dark ORCA-inspired treatment.
+   Font is set once, globally, via theme.font in mkdocs.yml (JetBrains Mono
+   for both text and code) — Material loads it from Google Fonts and exposes
+   it as --md-text-font / --md-code-font, so there is no Arial/system-font
+   fallback anywhere on the site. This file adds lowercase branding to nav
+   chrome, de-generic-izes the sidebar/footer, and gives the homepage the
+   full dark ORCA-inspired treatment.
    ========================================================================== */
 
-@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap");
-
 /* ---- Site-wide chrome (header / tabs / sidebar) --------------------------- */
-
-.md-header__title,
-.md-tabs__link,
-.md-nav__title,
-.md-nav__link,
-.md-nav__item .md-nav__link {
-  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
-}
 
 .md-header__title,
 .md-tabs__link,
@@ -25,9 +16,55 @@
   text-transform: lowercase;
 }
 
+/* Section group labels ("build it", "understand it"...) get their own
+   distinct treatment — uppercase + letter-spacing — so they read as
+   category labels, visually separate from the lowercase leaf links under
+   them. This, plus the accent-colored active-item bar below, is what breaks
+   up the generic "flat bullet list" look. */
 .md-nav__title {
-  text-transform: lowercase;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  color: var(--md-default-fg-color--light);
+}
+
+.md-nav__item .md-nav__link--active {
+  position: relative;
   font-weight: 600;
+}
+
+.md-nav__item .md-nav__link--active::before {
+  content: "";
+  position: absolute;
+  left: -0.8rem;
+  top: 0.15rem;
+  bottom: 0.15rem;
+  width: 2px;
+  background: var(--md-accent-fg-color);
+}
+
+/* Right-hand "on this page" column is hidden per-page via `hide: - toc` in
+   front matter (added to every doc page) rather than force-hidden here —
+   that's the layout-correct way to collapse Material back to a clean
+   two-column (nav + content) page instead of the generic three-column
+   docs-site skeleton. */
+
+/* Prev/next footer — restyle from Material's default rounded cards to thin
+   rectangular bordered buttons, matching the rest of the site's language. */
+.md-footer__link {
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.375rem;
+  transition: border-color 0.15s ease;
+}
+
+.md-footer__link:hover {
+  border-color: var(--md-accent-fg-color);
+  background: transparent;
+}
+
+.md-footer-meta {
+  border-top: 1px solid var(--md-default-fg-color--lightest);
 }
 
 /* ---- Full-bleed dark landing wrapper -------------------------------------
