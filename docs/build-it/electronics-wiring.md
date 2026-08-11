@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Electronics & Wiring
 
 Wiring diagrams and instructions for the EMG sensor, microcontroller, motor

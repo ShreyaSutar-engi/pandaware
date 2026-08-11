@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Printing Guide
 
 Guidance for 3D-printing the PandaWare hand: recommended materials, print

@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # The Project & Mission
 
 The story of why PandaWare exists and what it's trying to achieve.

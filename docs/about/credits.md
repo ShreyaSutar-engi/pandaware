@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Credits
 
 People, projects, and resources PandaWare builds on or wouldn't exist

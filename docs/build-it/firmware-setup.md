@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Firmware & Setup
 
 How to flash and configure the PandaWare firmware once the electronics are

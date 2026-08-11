@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Overview & What You'll Need
 
 A high-level orientation before someone starts building: what PandaWare is,

@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # License & Attribution
 
 PandaWare uses a dual license: one license for documentation and hardware

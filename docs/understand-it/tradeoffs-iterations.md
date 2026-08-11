@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Trade-offs & Iterations
 
 What changed across PandaWare's design iterations, and why — including

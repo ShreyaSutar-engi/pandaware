@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # The Hand
 
 The mechanical design of the hand itself: geometry, joints, and tendon

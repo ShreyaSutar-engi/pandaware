@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Assembly
 
 Step-by-step mechanical assembly instructions: joints, tendons, and the

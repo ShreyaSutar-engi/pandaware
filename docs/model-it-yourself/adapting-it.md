@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Adapting It
 
 How to customize PandaWare for a specific user, socket, or use case once

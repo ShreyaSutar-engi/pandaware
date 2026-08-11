@@ -13,7 +13,7 @@ hide:
 
 <div class="pw-hero" markdown>
 
-<p class="pw-wordmark">
+<h1 class="pw-wordmark">
 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
   <circle cx="7" cy="6" r="2.1" fill="currentColor"/>
   <circle cx="17" cy="6" r="2.1" fill="currentColor"/>
@@ -22,7 +22,7 @@ hide:
   <path d="M12 10c-3.6 0-6.6 2.9-6.6 6.2 0 2.6 2.1 3.8 4.4 3 .8-.3 1.5-.3 2.2 0 2.3.8 4.4-.4 4.4-3C18.6 12.9 15.6 10 12 10z" fill="currentColor"/>
 </svg>
 pandaware
-</p>
+</h1>
 
 <p class="pw-hero__tagline">
   An open-source, EMG-controlled prosthetic hand — built to be affordable,

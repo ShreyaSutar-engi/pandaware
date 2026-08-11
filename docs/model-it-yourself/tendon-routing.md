@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Tendon Routing
 
 How to design tendon channels through a finger and palm so cable-driven

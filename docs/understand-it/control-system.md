@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Control System
 
 How PandaWare senses muscle signals and turns them into proportional,

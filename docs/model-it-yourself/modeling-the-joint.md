@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Modeling the Joint
 
 How to design a functional, printable joint for a PandaWare finger.

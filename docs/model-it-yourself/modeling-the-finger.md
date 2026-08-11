@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Modeling the Finger
 
 A guided walkthrough for modeling a PandaWare finger from scratch.

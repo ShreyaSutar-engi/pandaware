@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Before You Start
 
 What readers need before modeling their own PandaWare parts: CAD software,

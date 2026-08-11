@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Bill of Materials
 
 The full parts list needed to build a PandaWare hand: printed parts,

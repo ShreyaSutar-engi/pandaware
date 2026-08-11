@@ -15,6 +15,9 @@ theme:
     logo: material/hand-back-right
     repo: fontawesome/brands/github
   favicon: assets/hero/favicon.svg
+  font:
+    text: JetBrains Mono
+    code: JetBrains Mono
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default

@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Design Philosophy
 
 The reasoning behind PandaWare's overall approach: why it's designed the way
