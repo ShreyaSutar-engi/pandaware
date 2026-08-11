@@ -22,7 +22,7 @@ If you use, remix, or build upon PandaWare's documentation or designs
 (including building your own hand from these files), please credit the
 project. Suggested attribution:
 
-> Based on **PandaWare** (<https://github.com/Shreyasutar-engi/pandware>),
+> Based on **PandaWare** (<https://github.com/ShreyaSutar-engi/pandaware>),
 > licensed under CC BY 4.0.
 
 No endorsement is implied — please don't suggest PandaWare or its

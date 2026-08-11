@@ -1,13 +1,13 @@
 site_name: PandaWare
 site_description: An open-source, EMG-controlled prosthetic hand you can build, understand, and model yourself.
-site_url: https://Shreyasutar-engi.github.io/pandware/
-repo_url: https://github.com/Shreyasutar-engi/pandware
-repo_name: Shreyasutar-engi/pandware
+site_url: https://ShreyaSutar-engi.github.io/pandaware/
+repo_url: https://github.com/ShreyaSutar-engi/pandaware
+repo_name: ShreyaSutar-engi/pandaware
 edit_uri: edit/main/docs/
 copyright: >
   Copyright &copy; 2026 PandaWare —
   Docs & designs licensed <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>,
-  firmware licensed <a href="https://github.com/Shreyasutar-engi/pandware/blob/main/LICENSE">MIT</a>.
+  firmware licensed <a href="https://github.com/ShreyaSutar-engi/pandaware/blob/main/LICENSE">MIT</a>.
 
 theme:
   name: material
@@ -93,4 +93,4 @@ nav:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/Shreyasutar-engi/pandware
+      link: https://github.com/ShreyaSutar-engi/pandaware

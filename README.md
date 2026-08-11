@@ -3,7 +3,7 @@
 An open-source, EMG-controlled prosthetic hand — built to be affordable,
 understandable, and yours to customize.
 
-📖 **Docs:** https://Shreyasutar-engi.github.io/pandware/
+📖 **Docs:** https://ShreyaSutar-engi.github.io/pandaware/
 
 ## Repository layout
 
