@@ -1,0 +1,169 @@
+/* ==========================================================================
+   PandaWare — custom landing page styling
+   Layers on top of Material for MkDocs; uses Material's CSS variables so it
+   automatically follows the light/dark palette toggle.
+   ========================================================================== */
+
+/* ---- Hero ---------------------------------------------------------------- */
+
+.pw-hero {
+  margin: -1.2rem -1.2rem 2.5rem;
+  padding: 4rem 1.5rem 3.5rem;
+  text-align: center;
+  color: var(--md-primary-bg-color);
+  background: linear-gradient(
+    135deg,
+    var(--md-primary-fg-color) 0%,
+    #0f3d3e 100%
+  );
+  border-radius: 0 0 0.75rem 0.75rem;
+}
+
+.pw-hero__eyebrow {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.85;
+  margin-bottom: 0.75rem;
+}
+
+.pw-hero__title {
+  font-size: 3rem;
+  line-height: 1.1;
+  font-weight: 800;
+  margin: 0 0 0.75rem;
+  color: var(--md-primary-bg-color);
+}
+
+.pw-hero__tagline {
+  max-width: 42rem;
+  margin: 0 auto 2rem;
+  font-size: 1.15rem;
+  font-weight: 400;
+  opacity: 0.95;
+  line-height: 1.5;
+}
+
+.pw-hero__media {
+  max-width: 46rem;
+  margin: 0 auto 2.5rem;
+  aspect-ratio: 16 / 9;
+  border-radius: 0.75rem;
+  border: 2px dashed rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.95rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Buttons row — relies on Material's built-in .md-button, restyled for the
+   dark hero background. */
+.pw-hero__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.85rem;
+  margin: 0 auto;
+}
+
+.pw-hero__buttons .md-button {
+  font-weight: 600;
+  padding: 0.65rem 1.5rem;
+  border-radius: 2rem;
+  border-width: 2px;
+}
+
+.pw-hero__buttons .md-button--primary {
+  background-color: var(--md-accent-fg-color);
+  border-color: var(--md-accent-fg-color);
+  color: #fff;
+}
+
+.pw-hero__buttons .md-button--primary:hover {
+  background-color: var(--md-accent-fg-color--transparent);
+  border-color: var(--md-accent-fg-color);
+}
+
+.pw-hero__buttons .md-button:not(.md-button--primary) {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.pw-hero__buttons .md-button:not(.md-button--primary):hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+
+/* ---- Mission section ------------------------------------------------------ */
+
+.pw-mission {
+  max-width: 46rem;
+  margin: 0 auto 3rem;
+  text-align: center;
+}
+
+.pw-mission h2 {
+  margin-bottom: 0.75rem;
+}
+
+.pw-mission p {
+  font-size: 1.05rem;
+  color: var(--md-default-fg-color--light);
+  line-height: 1.6;
+}
+
+/* ---- Three-pillar cards ---------------------------------------------------- */
+
+.pw-pillars {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1.25rem;
+  margin: 0 0 3rem;
+}
+
+.pw-pillar {
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  background: var(--md-code-bg-color);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.pw-pillar:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.pw-pillar h3 {
+  margin-top: 0;
+  color: var(--md-primary-fg-color);
+}
+
+.pw-pillar p {
+  color: var(--md-default-fg-color--light);
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+/* ---- Responsive tweaks ----------------------------------------------------- */
+
+@media screen and (max-width: 44.9375em) {
+  .pw-hero {
+    margin: -1rem -1rem 2rem;
+    padding: 2.75rem 1rem 2.5rem;
+  }
+
+  .pw-hero__title {
+    font-size: 2.1rem;
+  }
+
+  .pw-hero__tagline {
+    font-size: 1rem;
+  }
+}
