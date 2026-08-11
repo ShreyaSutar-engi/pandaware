@@ -1,7 +1,6 @@
 ---
 title: PandaWare — Open-Source EMG-Controlled Prosthetic Hand
 hide:
-  - navigation
   - toc
 ---
 
