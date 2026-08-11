@@ -1,0 +1,96 @@
+site_name: PandaWare
+site_description: An open-source, EMG-controlled prosthetic hand you can build, understand, and model yourself.
+site_url: https://Shreyasutar-engi.github.io/pandware/
+repo_url: https://github.com/Shreyasutar-engi/pandware
+repo_name: Shreyasutar-engi/pandware
+edit_uri: edit/main/docs/
+copyright: >
+  Copyright &copy; 2026 PandaWare —
+  Docs & designs licensed <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>,
+  firmware licensed <a href="https://github.com/Shreyasutar-engi/pandware/blob/main/LICENSE">MIT</a>.
+
+theme:
+  name: material
+  icon:
+    logo: material/hand-back-right
+    repo: fontawesome/brands/github
+  favicon: assets/hero/favicon.svg
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: deep orange
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: deep orange
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.top
+    - navigation.indexes
+    - navigation.footer
+    - content.code.copy
+    - content.action.edit
+    - toc.follow
+    - search.suggest
+    - search.highlight
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - admonition
+  - tables
+  - footnotes
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+
+plugins:
+  - search
+
+nav:
+  - Home: index.md
+  - Build It:
+      - Overview & What You'll Need: build-it/overview.md
+      - Bill of Materials: build-it/bill-of-materials.md
+      - Printing Guide: build-it/printing-guide.md
+      - Assembly: build-it/assembly.md
+      - Electronics & Wiring: build-it/electronics-wiring.md
+      - Firmware & Setup: build-it/firmware-setup.md
+  - Understand It:
+      - Design Philosophy: understand-it/design-philosophy.md
+      - The Hand: understand-it/the-hand.md
+      - Control System: understand-it/control-system.md
+      - Trade-offs & Iterations: understand-it/tradeoffs-iterations.md
+  - Model It Yourself:
+      - Before You Start: model-it-yourself/before-you-start.md
+      - Modeling the Finger: model-it-yourself/modeling-the-finger.md
+      - Modeling the Joint: model-it-yourself/modeling-the-joint.md
+      - Tendon Routing: model-it-yourself/tendon-routing.md
+      - Adapting It: model-it-yourself/adapting-it.md
+  - About:
+      - The Project & Mission: about/project-mission.md
+      - License & Attribution: about/license-attribution.md
+      - Credits: about/credits.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Shreyasutar-engi/pandware
