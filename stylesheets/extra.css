@@ -49,6 +49,30 @@
    two-column (nav + content) page instead of the generic three-column
    docs-site skeleton. */
 
+/* Sidebar as a distinct panel, not a flush list of links blending into the
+   page — a bordered, rounded, slightly tinted card, sticky as you scroll,
+   set off from the content column with real spacing. This is the
+   structural change (not just recoloring) that breaks it out of looking
+   like a stock docs-site nav rail. */
+.md-sidebar--primary .md-sidebar__inner {
+  background: var(--md-code-bg-color);
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.5rem;
+  padding: 1.25rem 1rem;
+}
+
+.md-sidebar--primary {
+  padding-top: 1.5rem;
+}
+
+.md-nav__list {
+  padding-left: 0;
+}
+
+.md-nav__item {
+  padding: 0.1rem 0;
+}
+
 /* Prev/next footer — restyle from Material's default rounded cards to thin
    rectangular bordered buttons, matching the rest of the site's language. */
 .md-footer__link {
@@ -79,28 +103,14 @@
 }
 
 /* ---- Dark landing wrapper --------------------------------------------------
-   A CONTAINED box (not viewport-edge-to-edge). Two earlier attempts at a
-   full-bleed hero broke because Material's grid reserves *asymmetric*
-   invisible sidebar space around the content column on this page — the
-   column isn't centered in the viewport, so vw-based "break out of the
-   container" math can't land at a true 0. Rather than a third fragile
-   viewport hack, the hero is a normal in-flow rounded box sized to the
-   content column. Material's content wrapper still adds its own top
-   padding above whatever we put inside it, which was showing through as a
-   stray strip of the *default* page background (why it tracked the
-   light/dark toggle independently of our fixed-dark hero) — zeroed at the
-   source below, leaving left/right/bottom padding untouched. */
-
-.md-content__inner:has(> .pw-landing) {
-  padding-top: 0;
-}
-
-/* Material also injects an 8px ::before spacer on .md-content__inner
-   (confirmed via computed style, not a guess) — suppress it only here so
-   the hero sits flush, without touching that spacer on normal doc pages. */
-.md-content__inner:has(> .pw-landing)::before {
-  display: none;
-}
+   Genuinely full-bleed now — not a CSS trick. docs/overrides/home.html
+   renders this inside Material's own `tabs` block (the same full-width
+   region the top tab bar lives in), which sits *outside* the constrained
+   content grid entirely. That's why every earlier attempt (viewport-width
+   math, :has() padding hacks) kept breaking: they were all trying to escape
+   a grid from the inside. This block never enters that grid in the first
+   place, so it needs no escape trick — a plain 100%-width box is already
+   edge-to-edge. */
 
 .pw-landing {
   --pw-bg: #0a0a0b;
@@ -111,7 +121,7 @@
   --pw-text-dim: #9a9aa4;
   --pw-accent: #ff6a3d;
 
-  border-radius: 0 0 1rem 1rem;
+  width: 100%;
   background: var(--pw-bg);
   color: var(--pw-text);
   font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
