@@ -8,6 +8,77 @@
    full dark ORCA-inspired treatment.
    ========================================================================== */
 
+/* ---- Step tracker (replaces the left sidebar) ------------------------------
+   Rendered by docs/overrides/main.html at the top of every doc page's
+   content, generated from that page's actual nav siblings. */
+
+.pw-stepper {
+  margin-bottom: 2.25rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.pw-stepper__section {
+  display: block;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--md-default-fg-color--light);
+  margin-bottom: 0.9rem;
+}
+
+.pw-stepper__track {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.pw-stepper__step {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.75rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 999px;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 0.78rem;
+  text-decoration: none;
+  color: var(--md-default-fg-color--light);
+  transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+
+.pw-stepper__step:hover {
+  border-color: var(--md-accent-fg-color);
+  color: var(--md-default-fg-color);
+}
+
+.pw-stepper__step--active {
+  background: var(--md-accent-fg-color);
+  border-color: var(--md-accent-fg-color);
+  color: #0a0a0b;
+  font-weight: 600;
+}
+
+.pw-stepper__num {
+  opacity: 0.7;
+}
+
+.pw-stepper__step--active .pw-stepper__num {
+  opacity: 1;
+}
+
+/* Content column gets its full width back now that the sidebar is gone on
+   pages using the stepper (hide: navigation, set per-page). */
+.md-content {
+  max-width: none;
+}
+
+.md-grid {
+  max-width: 61rem;
+}
+
 /* ---- Site-wide chrome (header / tabs / sidebar) --------------------------- */
 
 .md-header__title,
