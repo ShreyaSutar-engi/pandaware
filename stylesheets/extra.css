@@ -95,6 +95,13 @@
   padding-top: 0;
 }
 
+/* Material also injects an 8px ::before spacer on .md-content__inner
+   (confirmed via computed style, not a guess) — suppress it only here so
+   the hero sits flush, without touching that spacer on normal doc pages. */
+.md-content__inner:has(> .pw-landing)::before {
+  display: none;
+}
+
 .pw-landing {
   --pw-bg: #0a0a0b;
   --pw-bg-soft: #131316;
