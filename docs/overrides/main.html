@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{#
+  Site-wide content override.
+
+  What this changes structurally (not just styling): the traditional left
+  sidebar nav tree is hidden (via `hide: navigation` in every doc page's
+  front matter), and replaced with a horizontal step-tracker built directly
+  into the top of the content column, generated from the page's actual
+  siblings in the nav (page.parent.children) — so it stays in sync with
+  mkdocs.yml automatically, nothing hardcoded per page. Content also gets
+  the full column width back since there's no sidebar reserving space
+  beside it. This is the "move the elements around" pass — home.html
+  already did this for the homepage; this does the equivalent for every
+  other page.
+#}
+
+{% block content %}
+  {% if page.parent and page.parent.children and page.parent.children | length > 1 %}
+    <div class="pw-stepper">
+      <span class="pw-stepper__section">{{ page.parent.title }}</span>
+      <div class="pw-stepper__track">
+        {% for sibling in page.parent.children %}
+          {% if sibling.title %}
+            <a href="{{ sibling.url | url }}"
+               class="pw-stepper__step{% if sibling.url == page.url %} pw-stepper__step--active{% endif %}">
+              <span class="pw-stepper__num">{{ '%02d' | format(loop.index) }}</span>
+              <span class="pw-stepper__label">{{ sibling.title }}</span>
+            </a>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+  {{ super() }}
+{% endblock %}
