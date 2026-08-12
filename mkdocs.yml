@@ -11,6 +11,7 @@ copyright: >
 
 theme:
   name: material
+  custom_dir: docs/overrides
   icon:
     logo: material/hand-back-right
     repo: fontawesome/brands/github
