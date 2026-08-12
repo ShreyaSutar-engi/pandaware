@@ -102,9 +102,10 @@
   --pw-text-dim: #9a9aa4;
   --pw-accent: #ff6a3d;
 
+  position: relative;
+  left: 50%;
   width: 100vw;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
+  margin-left: -50vw;
   background: var(--pw-bg);
   color: var(--pw-text);
   font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
