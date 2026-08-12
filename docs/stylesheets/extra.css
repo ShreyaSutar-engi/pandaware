@@ -29,19 +29,18 @@
   color: var(--md-default-fg-color--light);
 }
 
+/* Active nav item: a filled pill, not a thin border — a much stronger,
+   less "generic bullet list" indicator. */
 .md-nav__item .md-nav__link--active {
-  position: relative;
   font-weight: 600;
+  color: #0a0a0b;
+  background: var(--md-accent-fg-color);
+  border-radius: 0.25rem;
+  box-shadow: 0 0 0 0.4rem var(--md-accent-fg-color);
 }
 
-.md-nav__item .md-nav__link--active::before {
-  content: "";
-  position: absolute;
-  left: -0.8rem;
-  top: 0.15rem;
-  bottom: 0.15rem;
-  width: 2px;
-  background: var(--md-accent-fg-color);
+.md-nav__item .md-nav__link--active code {
+  color: inherit;
 }
 
 /* Right-hand "on this page" column is hidden per-page via `hide: - toc` in
@@ -67,10 +66,32 @@
   border-top: 1px solid var(--md-default-fg-color--lightest);
 }
 
+/* Page headings on regular doc pages — bolder, bigger, with a divider under
+   them, instead of Material's default thin heading. Excludes the homepage
+   wordmark (.pw-wordmark), which has its own distinct styling. */
+.md-typeset h1:not(.pw-wordmark) {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  padding-bottom: 0.85rem;
+  margin-bottom: 1.75rem;
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+}
+
 /* ---- Full-bleed dark landing wrapper -------------------------------------
-   Breaks out of Material's centered content column regardless of its
-   internal padding, using the viewport-width technique instead of guessing
-   negative margins. */
+   Breaks out of Material's centered content column using the standard
+   viewport-width full-bleed technique. Material's content wrapper
+   (.md-content__inner) still applies its own padding around whatever we put
+   inside it though — that leftover padding was showing through as a stray
+   strip of the *default* page background (which is why it changed color
+   with the light/dark toggle while our fixed-dark hero didn't: it was two
+   different elements). Zeroing that wrapper's padding — only on pages that
+   contain .pw-landing — removes the strip at the source instead of trying
+   to guess-cancel it with a negative margin. */
+
+.md-content__inner:has(> .pw-landing) {
+  padding: 0;
+}
 
 .pw-landing {
   --pw-bg: #0a0a0b;
@@ -81,13 +102,9 @@
   --pw-text-dim: #9a9aa4;
   --pw-accent: #ff6a3d;
 
-  position: relative;
-  left: 50%;
-  right: 50%;
   width: 100vw;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  margin-top: -1.2rem;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
   background: var(--pw-bg);
   color: var(--pw-text);
   font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
