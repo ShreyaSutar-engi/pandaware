@@ -29,18 +29,48 @@
   color: var(--md-default-fg-color--light);
 }
 
-/* Active nav item: a filled pill, not a thin border — a much stronger,
-   less "generic bullet list" indicator. */
+/* Active nav item: a filled pill, not a thin border. Real padding on the
+   link's own box (not a box-shadow bleeding outside it) — the shadow
+   version got clipped by the sidebar panel's rounded corners near the top
+   edge, which hid the text behind what looked like a broken gradient. */
 .md-nav__item .md-nav__link--active {
+  display: block;
   font-weight: 600;
-  color: #0a0a0b;
+  color: #0a0a0b !important;
   background: var(--md-accent-fg-color);
   border-radius: 0.25rem;
-  box-shadow: 0 0 0 0.4rem var(--md-accent-fg-color);
+  padding: 0.3rem 0.6rem;
+  margin: 0.1rem -0.6rem;
 }
 
 .md-nav__item .md-nav__link--active code {
   color: inherit;
+}
+
+/* Numbered step badges on leaf nav links — reinforces that Build It /
+   Model It Yourself are ordered sequences to work through, not a flat
+   reference list. (Understand It / About read fine unordered too, but the
+   numbering doesn't hurt there.) */
+.md-nav--primary > .md-nav__list > .md-nav__item > .md-nav > .md-nav__list {
+  counter-reset: pw-step;
+}
+
+.md-nav--primary > .md-nav__list > .md-nav__item > .md-nav > .md-nav__list > .md-nav__item {
+  counter-increment: pw-step;
+}
+
+.md-nav--primary > .md-nav__list > .md-nav__item > .md-nav > .md-nav__list > .md-nav__item > .md-nav__link::before {
+  content: counter(pw-step, decimal-leading-zero);
+  display: inline-block;
+  margin-right: 0.5rem;
+  font-size: 0.7rem;
+  color: var(--md-accent-fg-color);
+  opacity: 0.8;
+}
+
+.md-nav__item .md-nav__link--active::before {
+  color: inherit;
+  opacity: 1;
 }
 
 /* Right-hand "on this page" column is hidden per-page via `hide: - toc` in
@@ -71,6 +101,29 @@
 
 .md-nav__item {
   padding: 0.1rem 0;
+}
+
+/* TODO callouts — every placeholder page has one, so it's one of the most
+   repeated visual elements on the site. Replace Material's default rounded
+   admonition card with a sharp-edged, left-braced datasheet-style callout:
+   no border-radius, a thick left rule instead of a full border, monospace
+   bracketed label. */
+.md-typeset .admonition.warning,
+.md-typeset details.warning {
+  border: none;
+  border-left: 3px solid var(--md-accent-fg-color);
+  border-radius: 0;
+  background: var(--md-code-bg-color);
+  box-shadow: none;
+}
+
+.md-typeset .admonition.warning > .admonition-title,
+.md-typeset details.warning > summary {
+  background: transparent;
+  border: none;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  text-transform: lowercase;
+  letter-spacing: 0.02em;
 }
 
 /* Prev/next footer — restyle from Material's default rounded cards to thin
