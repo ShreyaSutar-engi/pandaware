@@ -78,19 +78,21 @@
   border-bottom: 1px solid var(--md-default-fg-color--lightest);
 }
 
-/* ---- Full-bleed dark landing wrapper -------------------------------------
-   Breaks out of Material's centered content column using the standard
-   viewport-width full-bleed technique. Material's content wrapper
-   (.md-content__inner) still applies its own padding around whatever we put
-   inside it though — that leftover padding was showing through as a stray
-   strip of the *default* page background (which is why it changed color
-   with the light/dark toggle while our fixed-dark hero didn't: it was two
-   different elements). Zeroing that wrapper's padding — only on pages that
-   contain .pw-landing — removes the strip at the source instead of trying
-   to guess-cancel it with a negative margin. */
+/* ---- Dark landing wrapper --------------------------------------------------
+   A CONTAINED box (not viewport-edge-to-edge). Two earlier attempts at a
+   full-bleed hero broke because Material's grid reserves *asymmetric*
+   invisible sidebar space around the content column on this page — the
+   column isn't centered in the viewport, so vw-based "break out of the
+   container" math can't land at a true 0. Rather than a third fragile
+   viewport hack, the hero is a normal in-flow rounded box sized to the
+   content column. Material's content wrapper still adds its own top
+   padding above whatever we put inside it, which was showing through as a
+   stray strip of the *default* page background (why it tracked the
+   light/dark toggle independently of our fixed-dark hero) — zeroed at the
+   source below, leaving left/right/bottom padding untouched. */
 
 .md-content__inner:has(> .pw-landing) {
-  padding: 0;
+  padding-top: 0;
 }
 
 .pw-landing {
@@ -102,10 +104,7 @@
   --pw-text-dim: #9a9aa4;
   --pw-accent: #ff6a3d;
 
-  position: relative;
-  left: 50%;
-  width: 100vw;
-  margin-left: -50vw;
+  border-radius: 0 0 1rem 1rem;
   background: var(--pw-bg);
   color: var(--pw-text);
   font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
